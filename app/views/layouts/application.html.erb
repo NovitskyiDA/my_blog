@@ -8,6 +8,12 @@
 </head>
 <body>
 
+<%= image_tag('logo.png', width: 50) %>
+<%= link_to 'Home', root_path %>
+<%= link_to 'Registration', registration_path %>
+<%= link_to 'Login', sessions_login_path %>
+<%= link_to 'Logout', sessions_loguot_path %>
+<h3><%= current_user.name if current_user %></h3>
 <%= yield %>
 
 </body>
