@@ -26,7 +26,7 @@ class PostsController < ApplicationController
   def create
 
     if current_user
-      @post = Post.new(post_params)
+      @post = current_user.posts.build(post_params)
 
       respond_to do |format|
         if @post.save
@@ -82,6 +82,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :body, :tags).merge(user_id: current_user.id)
+      params.require(:post).permit(:title, :body, :tags)
     end
 end
