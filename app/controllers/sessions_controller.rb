@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path, notice: "Hello, " + @user.name.capitalize
     else
-      redirect_to :back
+      redirect_to sessions_login_path, notice: "Try again"
     end
   end
 

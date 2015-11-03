@@ -6,10 +6,10 @@ class UsersController < ApplicationController
     def create
       @user = User.new(params.require(:user).permit(:name, :email, :password))
       if @user.save
-        session[:user_id] = @user.id
-        redirect_to root_path, notice: "Thank you for signing up!"
+        # session[:user_id] = @user.id
+        redirect_to sessions_login_path, notice: "Thank you for signing up! You can sign in"
       else
-        redirect_to :back
+        redirect_to :back, notice: "Try again"
       end
     end
 end
