@@ -39,6 +39,14 @@
   </tbody>
 </table>
 
+<%= form_tag posts_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+<% end %>
+
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_post_path,
             :class => 'btn btn-primary' if current_user %>
+
