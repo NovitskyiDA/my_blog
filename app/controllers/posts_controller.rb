@@ -9,12 +9,20 @@ class PostsController < ApplicationController
     else
       @posts = Post.all
     end
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json
+    end
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
-
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json
+    end
   end
 
   # GET /posts/new

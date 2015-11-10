@@ -14,6 +14,9 @@
   <dd><%= @post.user.name %></dd>
 </dl>
 
+<p><%=link_to image_tag("json.png", size: "40") , request.original_url+".json" , target: "_blank" %></p>
+
+
 <%= link_to t('.back', :default => t("helpers.links.back")),
               posts_path, :class => 'btn btn-default'  %>
 
