@@ -10,5 +10,5 @@ class Post < ActiveRecord::Base
       where("body LIKE ?", "%#{search}%")
     end
   end
-  
+
 end
