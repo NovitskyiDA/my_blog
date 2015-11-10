@@ -42,7 +42,7 @@
   </tbody>
 </table>
 
-<p><%=link_to image_tag("json.png", size: "40") , request.original_url+".json" , target: "_blank" %></p>
+<p><%=link_to image_tag("json.png", size: "40") , request.original_url + "posts.json" , target: "_blank" %></p>
 
 
 <%= form_tag posts_path, :method => 'get' do %>
