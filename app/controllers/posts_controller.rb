@@ -10,6 +10,12 @@ class PostsController < ApplicationController
       @posts = Post.all
     end
 
+    cookies[:views] = if cookies[:views].present?
+       cookies[:views].to_i + 1
+    else
+      1
+    end
+
     respond_to do |format|
       format.html # index.html.erb
       format.json

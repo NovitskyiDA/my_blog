@@ -5,10 +5,15 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script type='text/javascript'>
+      function popBox() {
+          alert('Hello from GEEKHUB!!!');
+      }
+  </script>
 </head>
 <body>
 
-<%= image_tag('logo.png', width: 50) %>
+<%= image_tag('logo.png', width: 70) %>
 <%= link_to 'Home', root_path %>
 <% if !current_user %>
     <%= link_to 'Registration', registration_path %>
@@ -18,6 +23,11 @@
 <%= link_to 'Logout', sessions_loguot_path if current_user %>
 <h3><%= current_user.name if current_user %></h3>
 <%= yield %>
+
+
+<% if cookies[:views].to_i % 10 == 0 %>
+    <script type='text/javascript'>popBox()</script>
+<% end %>
 
 </body>
 </html>
