@@ -1,8 +1,8 @@
 class Post < ActiveRecord::Base
   belongs_to :user
 
-  validates :title, presence: true, uniqueness: true, length: 5..100
-  validates :body, presence: true
+  validates :title, presence: true, uniqueness: true, length: { in: 5..140 }
+  validates :body, presence: true, length: { minimum: 140 }
   validates :user_id, presence: true
 
   def self.search(search)
