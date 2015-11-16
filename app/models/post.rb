@@ -11,4 +11,5 @@ class Post < ActiveRecord::Base
     end
   end
 
+  scope :newest, -> { order('created_at DESC') }
 end

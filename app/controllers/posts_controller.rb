@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     if params[:search].present?
       @posts = Post.search(params[:search])
     else
-      @posts = Post.all
+      @posts = Post.newest.all
     end
 
     cookies[:views] = if cookies[:views].present?
