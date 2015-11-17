@@ -19,7 +19,10 @@
         <td><%= post.title %></td>
         <td><%= post.body %></td>
         <td><%= post.tags %></td>
-        <td><%= post.user.name %></td>
+        <td>
+          <%= post.user.name %>
+          <%= image_tag avatar_url(post.user), :class => 'gravatar' %>
+        </td>
         <td><%=l post.created_at %></td>
         <td><%= link_to t('.show', :default => t("helpers.links.show")),
                     post_path(post), :class => 'btn btn-xs btn-warning' %>
